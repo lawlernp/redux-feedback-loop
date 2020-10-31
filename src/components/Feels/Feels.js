@@ -5,21 +5,15 @@ import "../App/App.css";
 
 class Feels extends Component {
 
-    componentDidMount = () => {
-
-    }
-
   nextPage = (event) => {
     event.preventDefault();
-    const feeling = document.getElementsByName("feeling");
+    const answers = document.getElementsByName("feeling");
 
-    for (let i = 0; i < feeling.length; i++) {
-    if (feeling[i].checked) {
-            this.props.dispatch(
-                {type: 'FEELINGS', payload: feeling[i].value}
-            );
+    for (let i = 0; i < answers.length; i++) {
+      if (answers[i].checked) {
+        this.props.dispatch({ type: "FEELINGS", payload: +answers[i].value });
         break;
-    }
+      }
     }
 
     console.log("check");
@@ -31,9 +25,8 @@ class Feels extends Component {
     return (
       <>
         <div className="pageNumber">1 of 4 pages</div>
-        {/* box goes here */}
         <div>
-          How are you feeling today?
+            How are you feeling today?
           <form onSubmit={this.nextPage}>
             <input type="radio" id="1" name="feeling" value="1" required />
             <label htmlFor="1">1</label>
@@ -45,7 +38,7 @@ class Feels extends Component {
             <label htmlFor="4">4</label>
             <input type="radio" id="5" name="feeling" value="5" />
             <label htmlFor="5">5</label>
-            <button type="submit" value="Next">Submit</button>
+            <button type="submit">Next</button>
           </form>
         </div>
         <div></div>

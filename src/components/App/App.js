@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './App.css';
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import Feels from "../Feels/Feels";
 import Understanding from "../Understanding/Understanding";
 import { HashRouter as Router, Route } from "react-router-dom";

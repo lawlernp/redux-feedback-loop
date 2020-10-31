@@ -8,11 +8,18 @@ import { combineReducers, applyMiddleware, createStore } from "redux";
 import { Provider } from "react-redux";
 
 
-// Logger with default options
-const feelings = (state = {}, action) => {
-  // TODO - set book list with data from server
+const feelings = (state = 0, action) => {
   switch (action.type) {
     case "FEELINGS":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+const understanding = (state = 0, action) => {
+  switch (action.type) {
+    case "UNDERSTANDING":
       return action.payload;
     default:
       return state;
@@ -23,6 +30,7 @@ const feelings = (state = {}, action) => {
 const storeInstance = createStore(
   combineReducers({
     feelings,
+    understanding,
   }),
   applyMiddleware(logger)
 );
