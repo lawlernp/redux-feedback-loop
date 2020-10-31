@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { connect } from "react-redux";
+import Feels from "../Feels/Feels";
+import { HashRouter as Router, Route } from "react-router-dom";
+
 
 class App extends Component {
   render() {
@@ -10,6 +14,7 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
+        <Feels/>
         <br/>
       </div>
     );

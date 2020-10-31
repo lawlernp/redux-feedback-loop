@@ -5,15 +5,33 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import logger from "redux-logger";
 import { combineReducers, applyMiddleware, createStore } from "redux";
+import { Provider } from "react-redux";
+
 
 // Logger with default options
+const feelings = (state = 0, action) => {
+  // TODO - set book list with data from server
+  switch (action.type) {
+    case "FEELINGS":
+      return action.payload;
+    default:
+      return state;
+  }
+};
 
 
-const reduxStore = createStore(
+const storeInstance = createStore(
   combineReducers({
+    feelings,
   }),
   applyMiddleware(logger)
 );
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={storeInstance}>
+    {" "}
+    <App />{" "}
+  </Provider>,
+  document.getElementById("root")
+);
 registerServiceWorker();
