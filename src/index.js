@@ -9,7 +9,7 @@ import { Provider } from "react-redux";
 
 
 // Logger with default options
-const feelings = (state = 0, action) => {
+const feelings = (state = {}, action) => {
   // TODO - set book list with data from server
   switch (action.type) {
     case "FEELINGS":

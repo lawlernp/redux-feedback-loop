@@ -5,7 +5,9 @@ import "../App/App.css";
 
 class Understanding extends Component {
   render() {
-    return <></>;
+    return <>
+    Test
+    </>;
   }
 }
 
