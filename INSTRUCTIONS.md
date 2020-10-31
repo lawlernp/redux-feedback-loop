@@ -1,5 +1,6 @@
 # Redux Feedback Loop
 
+***in append history function also able to dispatch info***
 
 "And my last reminder of the day, which is my last reminder of every day, is...?" - Luke
 
