@@ -15,9 +15,6 @@ class Feels extends Component {
         break;
       }
     }
-
-    console.log("check");
-    // this will happen this weekend
     this.props.history.push("/understanding");
   };
 

@@ -26,11 +26,30 @@ const understanding = (state = 0, action) => {
   }
 };
 
+const support = (state = 0, action) => {
+  switch (action.type) {
+    case "SUPPORT":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+const comments = (state = '', action) => {
+  switch (action.type) {
+    case "COMMENTS":
+      return action.payload;
+    default:
+      return state;
+  }
+};
 
 const storeInstance = createStore(
   combineReducers({
     feelings,
     understanding,
+    support,
+    comments,
   }),
   applyMiddleware(logger)
 );

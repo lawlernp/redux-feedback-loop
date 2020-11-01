@@ -17,10 +17,7 @@ class Understanding extends Component {
         break;
       }
     }
-
-    console.log("check");
-    // this will happen this weekend
-    this.props.history.push("/understanding");
+    this.props.history.push("/supported");
   };
 
   render() {
