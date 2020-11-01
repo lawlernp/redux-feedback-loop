@@ -16,17 +16,22 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  let newBook = req.body;
-  console.log(`Adding book`, newBook);
+  console.log(`submitting feedback`, req.body);
 
-  let queryText = `INSERT INTO "books" ("author", "title")
-                   VALUES ($1, $2);`;
-  pool.query(queryText, [newBook.author, newBook.title])
-    .then(result => {
+  let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+                   VALUES ($1, $2, $3, $4);`;
+  pool
+    .query(queryText, [
+      req.body.feelings,
+      req.body.understanding,
+      req.body.support,
+      req.body.comments,
+    ])
+    .then((result) => {
       res.sendStatus(201);
     })
-    .catch(error => {
-      console.log(`Error adding new book`, error);
+    .catch((error) => {
+      console.log(`Error submitting feedback`, error);
       res.sendStatus(500);
     });
 });
