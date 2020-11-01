@@ -9,12 +9,13 @@ class Comments extends Component {
         comments: ''
     }
 
-  nextPage = () => {
+  nextPage = (event) => {
+        event.preventDefault();
         this.props.dispatch({
           type: "COMMENTS",
           payload: this.state.comments,
         });
-    this.props.history.push("/submit");
+    this.props.history.push("/review");
   };
 
   handleChange = (event) => {
@@ -28,6 +29,7 @@ class Comments extends Component {
   render() {
     return (
       <>
+        <div className="pageNumber">4 of 4 pages</div>
         <form onSubmit={this.nextPage}>
           <label htmlFor="comments">Any comments you want to leave?</label>
           <textarea

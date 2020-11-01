@@ -3,13 +3,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../App/App.css";
 
-class Submit extends Component {
+class Review extends Component {
   render() {
-    return <></>;
+    return <>
+    Review</>;
   }
 }
 
 const putReduxStateOnProps = (reduxState) => ({
   reduxState,
 });
-export default connect(putReduxStateOnProps)(Submit);
+export default connect(putReduxStateOnProps)(Review);
