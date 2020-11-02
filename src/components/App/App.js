@@ -24,12 +24,14 @@ class App extends Component {
           </header>
           <br />
         </div>
+        <div className="Components">
         <Route exact path="/" component={Feels} />
         <Route exact path="/understanding" component={Understanding} />
         <Route exact path="/supported" component={Support} />
         <Route exact path="/comments" component={Comments} />
         <Route exact path="/review" component={Review} />
         <Route exact path="/success" component={Success} />
+        </div>
       </Router>
     );
   }

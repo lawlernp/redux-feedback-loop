@@ -27,7 +27,13 @@ class Understanding extends Component {
         <div>
           How well are you understanding the content?
           <form onSubmit={this.nextPage}>
-            <input type="radio" id="1" name="understanding" value="1" required />
+            <input
+              type="radio"
+              id="1"
+              name="understanding"
+              value="1"
+              required
+            />
             <label htmlFor="1">1</label>
             <input type="radio" id="2" name="understanding" value="2" />
             <label htmlFor="2">2</label>
@@ -37,9 +43,8 @@ class Understanding extends Component {
             <label htmlFor="4">4</label>
             <input type="radio" id="5" name="understanding" value="5" />
             <label htmlFor="5">5</label>
-            <button type="submit">
-              Next
-            </button>
+            <button type="submit">Next</button>
+            <p>5 = highest</p>
           </form>
         </div>
         <div></div>

@@ -38,6 +38,7 @@ class Support extends Component {
             <input type="radio" id="5" name="supported" value="5" />
             <label htmlFor="5">5</label>
             <button type="submit">Next</button>
+            <p>5 = highest</p>
           </form>
         </div>
         <div></div>
